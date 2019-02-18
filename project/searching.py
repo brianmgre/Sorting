@@ -1,5 +1,8 @@
 # STRETCH: implement Linear Search				
 def linear_search(arr, target):
+  for indx, num in enumerate(arr):
+    if num == x:
+      print(indx, num)
   
   # TO-DO: add missing code
 
