@@ -2,7 +2,7 @@
 def linear_search(arr, target):
     for indx, num in enumerate(arr):
         if num == target:
-            print(indx)
+            return(indx)
 
     return -1   # not found
 
