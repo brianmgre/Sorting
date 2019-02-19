@@ -24,8 +24,8 @@ def merge(arrA, arrB):
 # recursive sorting function
 def merge_sort(arr):
     if len(arr) > 1:
-        left = merge_sort(arr[0: len(arr) / 2])
-        right = merge_sort(arr[len(arr) / 2:])
+        left = merge_sort(arr[0: len(arr) // 2])
+        right = merge_sort(arr[len(arr) // 2:])
         arr = merge(left, right)   # merge() defined later
     return arr
 
@@ -53,11 +53,25 @@ def quick_sort(arr, low, high):
         if arr[i] < arr[pivot]:
             temp = arr[i]
             arr[i] = arr[pivot + 1]
-            arr[pivot]
+            arr[pivot+1] = temp
+
+            temp = arr[pivot]
+            arr[pivot] = arr[pivot + 1]
+            arr[pivot + 1] = temp
+            pivot += 1
+
+    quick_sort(arr, low, pivot - 1)
+    quick_sort(arr, pivot + 1, high)
+    return arr
 
 
+arr3 = [10, 1, 13, 3, 2, 6, 5, 25]
+
+print(quick_sort(arr3, 0, len(arr3)-1))
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
+
+
 def timsort(arr):
 
     return arr
