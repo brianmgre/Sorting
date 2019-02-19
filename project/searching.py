@@ -10,11 +10,23 @@ def linear_search(arr, target):
 # STRETCH: write an iterative implementation of Binary Search
 def binary_search(arr, target):
 
+    mid = len(arr)//2
+    low = 0
+    high = len(arr)-1
+
     if len(arr) == 0:
         return -1  # array empty
 
-    low = 0
-    high = len(arr)-1
+    elif target == arr[mid]:
+        return arr.index(target)
+    elif target < arr[mid]:
+        for i in range(low, arr[mid]):
+            if arr[i] == target:
+                return arr.index(target)
+    elif target > arr[mid]:
+        for i in range(arr[mid], high + 1):
+            if arr[i] == target:
+                return arr.index(target)
 
     # TO-DO: add missing code
 

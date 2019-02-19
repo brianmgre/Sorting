@@ -68,6 +68,8 @@ def quick_sort(arr, low, high):
 arr3 = [10, 1, 13, 3, 2, 6, 5, 25]
 
 print(quick_sort(arr3, 0, len(arr3)-1))
+
+
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 
