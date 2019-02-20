@@ -70,6 +70,29 @@ arr3 = [10, 1, 13, 3, 2, 6, 5, 25]
 print(quick_sort(arr3, 0, len(arr3)-1))
 
 
+def quick_sort_high(arr, low, high):
+
+    pivot = high - 1
+    count = low
+
+    if low < high:
+        for i in range(low, high):
+            if arr[i] < arr[pivot]:
+                a = arr[i]
+                b = arr[count]
+                arr[i], arr[count] = b, a
+                count += 1
+
+        x = arr[pivot]
+        y = arr[count]
+        arr[pivot], arr[count] = y, x
+
+        quick_sort_high(arr, low, count - 1)
+        quick_sort_high(arr, count + 1, high)
+
+    return arr
+
+
 # STRETCH: implement the Timsort function below
 # hint: check out https://github.com/python/cpython/blob/master/Objects/listsort.txt
 
